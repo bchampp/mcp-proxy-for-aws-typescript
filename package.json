@@ -1,0 +1,46 @@
+{
+  "name": "mcp-proxy-for-aws",
+  "version": "1.0.0",
+  "description": "A lightweight client-side proxy that bridges MCP clients and IAM-secured MCP servers on AWS with SigV4 request signing",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "mcp-proxy-for-aws": "./dist/bin/mcp-proxy-for-aws.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/bin/mcp-proxy-for-aws.js",
+    "dev": "tsx src/bin/mcp-proxy-for-aws.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "mcp",
+    "aws",
+    "sigv4",
+    "proxy",
+    "model-context-protocol"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@aws-crypto/sha256-js": "5.2.0",
+    "@aws-sdk/credential-providers": "3.1094.0",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@smithy/protocol-http": "5.5.13",
+    "@smithy/signature-v4": "5.6.9",
+    "@smithy/types": "4.16.1",
+    "commander": "12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
+  }
+}
